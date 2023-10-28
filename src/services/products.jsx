@@ -1,7 +1,6 @@
 import { URLS } from "../constants";
-import instance from "../utils/api";
+import { instance } from "../utilis/api";
 
-export const list = ()=>{
-    return instance.get(URLS.products)
-
-}
+export const list = (limit,page) => {
+ return  instance.get(`${URLS.products}?limit=${limit}&pages=${page}`);
+};

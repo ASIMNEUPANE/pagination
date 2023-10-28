@@ -1,3 +1,3 @@
-export const  URLS= {
-   products: '/api/v1/products'
+export const URLS = {
+    products: 'api/v1/products'
 }
