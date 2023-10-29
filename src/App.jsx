@@ -11,22 +11,26 @@ function App() {
   const dispatch = useDispatch();
 
   const list = useCallback(() => {
-    dispatch(fetchProducts({limit,page:currentPage}));
-  }, [dispatch,currentPage,limit]);
+    dispatch(fetchProducts({ limit, page: currentPage }));
+  }, [dispatch, currentPage, limit]);
 
   useEffect(() => {
     list();
   }, [list]);
 
   return (
-    
     <div className="m-5">
       <h1 className="flex d-flex justify-content-center">Hello Mitro</h1>
       <Product products={products} />
 
-
-      
-      <Paginate dispatch={dispatch} total={total} limit={limit} currentPage={currentPage} setCurrentPage={setCurrentPage} setLimit={setLimit} />
+      <Paginate
+        setLimit={setLimit}
+        dispatch={dispatch}
+        total={total}
+        limit={limit}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </div>
   );
 }
