@@ -5,7 +5,7 @@ import { list } from "../services/products";
 const initialState = {
   products: [],
   total: 0,
-  currentPage:1,
+  currentPage:3,
   limit:10,
   loading: false,
   error: '',

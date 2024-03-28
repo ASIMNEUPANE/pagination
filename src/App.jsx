@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import Paginate from "./components/Paginate";
 import Product from "./components/Product";
-import { fetchProducts, setCurrentPage, setLimit } from "./slices/productSlice";
+import {fetchProducts,setCurrentPage,setLimit} from './slices/productSlice'
 import { useEffect, useCallback } from "react";
 
 function App() {
@@ -13,6 +13,7 @@ function App() {
   const list = useCallback(() => {
     dispatch(fetchProducts({ limit, page: currentPage }));
   }, [dispatch, currentPage, limit]);
+  
 
   useEffect(() => {
     list();
